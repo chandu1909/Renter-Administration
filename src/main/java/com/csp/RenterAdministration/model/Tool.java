@@ -1,6 +1,9 @@
 package com.csp.RenterAdministration.model;
 
+import com.csp.RenterAdministration.config.ENUMS.Status.avilabilityStatus;
+
 import javax.persistence.*;
+import java.sql.Date;
 
 /** @Author chandra sekhar Polavarapu */
 @Entity
@@ -12,9 +15,10 @@ public class Tool {
   @Column private String category;
   @Column private double pricePerDay;
   @Column private double pricePerHour;
-  @Column private int quantity;
-
-  public Tool() {}
+  @Column private Date unavailableStartDate;
+  @Column private Date unavailableEndDate;
+  @Column @Enumerated(EnumType.ORDINAL)
+  private avilabilityStatus status;
 
   public Tool(
       long toolId,
@@ -22,13 +26,17 @@ public class Tool {
       String category,
       double pricePerDay,
       double pricePerHour,
-      int quantity) {
+      Date unavailableStartDate,
+      Date unavailableEndDate,
+      avilabilityStatus status) {
     this.toolId = toolId;
     this.toolName = toolName;
     this.category = category;
     this.pricePerDay = pricePerDay;
     this.pricePerHour = pricePerHour;
-    this.quantity = quantity;
+    this.unavailableStartDate = unavailableStartDate;
+    this.unavailableEndDate = unavailableEndDate;
+    this.status = status;
   }
 
   public long getToolId() {
@@ -71,11 +79,29 @@ public class Tool {
     this.pricePerHour = pricePerHour;
   }
 
-  public int getQuantity() {
-    return quantity;
+  public Date getUnavailableStartDate() {
+    return unavailableStartDate;
   }
 
-  public void setQuantity(int quantity) {
-    this.quantity = quantity;
+  public void setUnavailableStartDate(Date unavailableStartDate) {
+    this.unavailableStartDate = unavailableStartDate;
   }
+
+  public Date getUnavailableEndDate() {
+    return unavailableEndDate;
+  }
+
+  public void setUnavailableEndDate(Date unavailableEndDate) {
+    this.unavailableEndDate = unavailableEndDate;
+  }
+
+  public avilabilityStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(avilabilityStatus status) {
+    this.status = status;
+  }
+
+  public Tool() {}
 }

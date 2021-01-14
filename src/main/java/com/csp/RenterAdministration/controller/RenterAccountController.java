@@ -1,6 +1,7 @@
 package com.csp.RenterAdministration.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.csp.RenterAdministration.model.FindTool;
 import com.csp.RenterAdministration.model.Tool;
 import com.csp.RenterAdministration.service.ToolRegistrationService;
 import org.slf4j.Logger;
@@ -34,5 +35,13 @@ public class RenterAccountController {
 
         return toolRegistered;
     }
+
+    @PostMapping("/deleteTool")
+    public JSONObject removeToolController(@RequestBody FindTool deleteTool){
+        JSONObject deletedTool = new JSONObject();
+        deletedTool = toolRegistrationService.deleteTool(deleteTool);
+        return deletedTool;
+    }
+
 
 }

@@ -19,7 +19,7 @@ public class Tool {
   @Column private Date unavailableEndDate;
 
   @Column
-  @Enumerated(EnumType.ORDINAL)
+  @Enumerated(EnumType.STRING)
   private avilabilityStatus status;
 
   public Tool(

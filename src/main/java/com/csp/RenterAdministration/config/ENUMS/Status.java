@@ -5,5 +5,6 @@ public class Status {
   public enum avilabilityStatus {
     AVAILABLE,
     UNAVAILABLE,
+    REMOVED
   }
 }

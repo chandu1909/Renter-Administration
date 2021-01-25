@@ -17,7 +17,9 @@ public class Tool {
   @Column private double pricePerHour;
   @Column private Date unavailableStartDate;
   @Column private Date unavailableEndDate;
-  @Column @Enumerated(EnumType.ORDINAL)
+
+  @Column
+  @Enumerated(EnumType.ORDINAL)
   private avilabilityStatus status;
 
   public Tool(

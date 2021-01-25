@@ -1,11 +1,9 @@
 package com.csp.RenterAdministration.config.ENUMS;
 
-/**
- * @Author chandra sekhar Polavarapu
- */
+/** @Author chandra sekhar Polavarapu */
 public class Status {
-    public enum avilabilityStatus {
-        AVAILABLE,
-        UNAVAILABLE,
-    }
+  public enum avilabilityStatus {
+    AVAILABLE,
+    UNAVAILABLE,
+  }
 }

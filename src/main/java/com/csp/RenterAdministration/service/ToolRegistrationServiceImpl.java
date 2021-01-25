@@ -95,6 +95,8 @@ public class ToolRegistrationServiceImpl implements ToolRegistrationService {
       } catch (Exception e) {
         LOGGER.error("Exception occurred while attempting to update the record: ", e);
       }
+    } else {
+      LOGGER.error("Tool cannot be found !");
     }
 
     LOGGER.error("Failed to update the unavailability of the tool");

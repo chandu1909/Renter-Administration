@@ -24,6 +24,6 @@ public interface ToolDb extends CrudRepository<Tool, Long> {
   @Modifying
   @Transactional
   @Query(
-      "Update Tool t set t.unavailableStartDate = :unavailableStartDate AND t.unavailableEndDate = :unavailableEndDate where t.toolId = :id")
+      "Update Tool t set t.unavailableStartDate = :unavailableStartDate, t.unavailableEndDate = :unavailableEndDate where t.toolId = :id")
   int updateUnavailability(Date unavailableStartDate, Date unavailableEndDate, long id);
 }

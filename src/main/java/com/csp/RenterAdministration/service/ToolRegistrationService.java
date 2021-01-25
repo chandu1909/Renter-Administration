@@ -7,16 +7,14 @@ import com.csp.RenterAdministration.model.UnavailablityEntity;
 import com.csp.RenterAdministration.model.UpdatePrice;
 import org.springframework.stereotype.Service;
 
-/**
- * @Author chandra sekhar Polavarapu
- */
+/** @Author chandra sekhar Polavarapu */
 @Service
 public interface ToolRegistrationService {
-    JSONObject registerTool(Tool tool) throws Exception;
+  JSONObject registerTool(Tool tool) throws Exception;
 
-    JSONObject deleteTool(FindTool deleteTool);
+  JSONObject deleteTool(FindTool deleteTool);
 
-    JSONObject updatePrice(UpdatePrice updatePrice);
+  JSONObject updatePrice(UpdatePrice updatePrice);
 
-    JSONObject makeToolUnavailable(UnavailablityEntity unavailablityEntity);
+  JSONObject makeToolUnavailable(UnavailablityEntity unavailablityEntity);
 }

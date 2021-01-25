@@ -96,10 +96,12 @@ public class ToolRegistrationServiceImpl implements ToolRegistrationService {
         LOGGER.error("Exception occurred while attempting to update the record: ", e);
       }
     } else {
-      LOGGER.error("Tool cannot be found !");
+      LOGGER.error("Tool cannot be found :"+ unavailablityEntity.getToolId());
+      return responseBuilder.failedToFindToolResponse();
     }
 
-    LOGGER.error("Failed to update the unavailability of the tool");
+    LOGGER.error(
+        "Failed to update the unavailability of the tool : " + unavailablityEntity.getToolId());
     return responseBuilder.failureResponse();
   }
 }

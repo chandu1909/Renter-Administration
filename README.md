@@ -11,3 +11,8 @@ notes.
 # Terminology
 Renter : Person who rents out the items.
 Rentee : Person who takes the tools for rent. 
+
+
+#Unavailable Script
+As of now, the plan is to run two scripts everynight to make tools unavailable if the system date matches with the starting unavailable date and change availability status.
+At the same time find all the tools which are ending their unavailability period on the system date and change their status to avialable. THIS MIGHT CHANGE IN FUTURE.

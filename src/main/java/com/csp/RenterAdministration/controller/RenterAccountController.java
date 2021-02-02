@@ -64,4 +64,17 @@ public class RenterAccountController {
     }
     return result;
   }
+  //This returns the list of all the tools owned a specific user/ Renter
+  @PostMapping("/listToolsByRenter")
+  public JSONObject listToolsByRenterController(long renterId ){
+
+    return new JSONObject();
+  }
+
+  @PostMapping("/totalEarningsSummary")
+  public JSONObject totalEarningsSummaryController(){
+    //if I can get renter ID from the frontend, I can list out all the tools by that renter ID and calculate the totals.
+
+    return new JSONObject();
+  }
 }

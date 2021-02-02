@@ -18,6 +18,8 @@ public class Tool {
   @Column private Date unavailableStartDate;
   @Column private Date unavailableEndDate;
 
+  @Column private long renterId;
+
   @Column
   @Enumerated(EnumType.STRING)
   private avilabilityStatus status;
@@ -30,7 +32,8 @@ public class Tool {
       double pricePerHour,
       Date unavailableStartDate,
       Date unavailableEndDate,
-      avilabilityStatus status) {
+      avilabilityStatus status,
+      long renterId) {
     this.toolId = toolId;
     this.toolName = toolName;
     this.category = category;
@@ -39,6 +42,7 @@ public class Tool {
     this.unavailableStartDate = unavailableStartDate;
     this.unavailableEndDate = unavailableEndDate;
     this.status = status;
+    this.renterId = renterId;
   }
 
   public long getToolId() {
@@ -103,6 +107,14 @@ public class Tool {
 
   public void setStatus(avilabilityStatus status) {
     this.status = status;
+  }
+
+  public long getRenterId() {
+    return renterId;
+  }
+
+  public void setRenterId(long renterId) {
+    this.renterId = renterId;
   }
 
   public Tool() {}

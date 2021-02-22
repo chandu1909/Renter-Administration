@@ -7,6 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import javax.transaction.Transactional;
 import java.sql.Date;
+import java.util.Collection;
 
 /** @Author chandra sekhar Polavarapu */
 public interface ToolDb extends CrudRepository<Tool, Long> {
@@ -26,4 +27,9 @@ public interface ToolDb extends CrudRepository<Tool, Long> {
   @Query(
       "Update Tool t set t.unavailableStartDate = :unavailableStartDate, t.unavailableEndDate = :unavailableEndDate where t.toolId = :id")
   int updateUnavailability(Date unavailableStartDate, Date unavailableEndDate, long id);
+
+  /** From here Account holder action queries will be placed */
+  @Transactional
+  @Query("Select toolId From Tool t WHERE t.renterId = :renterId")
+  Collection<Long> getToolsByRenterId(long renterId);
 }

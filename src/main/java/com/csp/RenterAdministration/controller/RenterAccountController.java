@@ -5,6 +5,7 @@ import com.csp.RenterAdministration.model.FindTool;
 import com.csp.RenterAdministration.model.Tool;
 import com.csp.RenterAdministration.model.UnavailablityEntity;
 import com.csp.RenterAdministration.model.UpdatePrice;
+import com.csp.RenterAdministration.service.RenterOperationsService;
 import com.csp.RenterAdministration.service.ToolRegistrationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +27,7 @@ import java.util.Objects;
 public class RenterAccountController {
   private final Logger LOGGER = LoggerFactory.getLogger(RenterAccountController.class);
   @Autowired ToolRegistrationService toolRegistrationService;
+  @Autowired RenterOperationsService renterOperationsService;
 
   @PostMapping("/addTool")
   public JSONObject addToolController(@RequestBody Tool tool) {
@@ -33,7 +35,7 @@ public class RenterAccountController {
     try {
       toolRegistered = toolRegistrationService.registerTool(tool);
     } catch (Exception e) {
-      LOGGER.error("exception occurred while adding the new tool: ", e.getStackTrace());
+      LOGGER.error("exception occurred while adding the new tool: ", e.getMessage());
     }
 
     return toolRegistered;
@@ -67,7 +69,7 @@ public class RenterAccountController {
   //This returns the list of all the tools owned a specific user/ Renter
   @PostMapping("/listToolsByRenter")
   public JSONObject listToolsByRenterController(long renterId ){
-
+    renterOperationsService.listOfTools(renterId);
     return new JSONObject();
   }
 

@@ -17,7 +17,6 @@ public class Tool {
   @Column private double pricePerHour;
   @Column private Date unavailableStartDate;
   @Column private Date unavailableEndDate;
-
   @Column private long renterId;
 
   @Column

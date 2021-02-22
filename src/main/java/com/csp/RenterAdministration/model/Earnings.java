@@ -2,14 +2,16 @@ package com.csp.RenterAdministration.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /** @Author chandra sekhar Polavarapu */
+
 @Entity
 @Table(name = "Earnings")
 public class Earnings {
   // How do I write logic to get the total from all tools owned by a specific renter
-  @Column private long toolId;
+  @Column @Id private long toolId;
   @Column private double earningsFromTool;
 
   public Earnings() {}
